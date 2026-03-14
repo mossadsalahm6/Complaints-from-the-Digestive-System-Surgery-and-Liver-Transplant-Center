@@ -1,0 +1,386 @@
+/* تصميم بسيط وسهل للمرضى */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(to bottom right, #f8f7f5, #f0ebe5);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-bottom: 4px solid #8B3A3A;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.logos-section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.header-text {
+    text-align: center;
+}
+
+.header-text h1 {
+    font-size: 2.5rem;
+    color: #1E3A5F;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+}
+
+.header-text p {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 600;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Introduction */
+.intro-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.intro-section h2 {
+    font-size: 2.2rem;
+    color: #1E3A5F;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.intro-section p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Form Card */
+.form-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid #e8e0d8;
+}
+
+.complaint-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1E3A5F;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.25rem;
+}
+
+.required {
+    color: #d32f2f;
+    font-weight: 900;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.875rem 1rem;
+    border: 2px solid #d4d0ca;
+    border-radius: 8px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    text-align: right;
+    transition: all 0.3s ease;
+    background: #fafaf8;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8B3A3A;
+    box-shadow: 0 0 0 3px rgba(139, 58, 58, 0.1);
+    background: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+}
+
+/* Messages */
+.message {
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-message {
+    background: #e8f5e9;
+    border: 2px solid #4caf50;
+    color: #2e7d32;
+}
+
+.error-message {
+    background: #ffebee;
+    border: 2px solid #f44336;
+    color: #c62828;
+}
+
+.message-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.message p {
+    margin: 0;
+    text-align: right;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.submit-btn {
+    padding: 0.875rem 2.5rem;
+    background: linear-gradient(135deg, #8B3A3A 0%, #6B2A2A 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Cairo', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(139, 58, 58, 0.3);
+    min-width: 200px;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #6B2A2A 0%, #4B1A1A 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(139, 58, 58, 0.4);
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Footer Info */
+.footer-info {
+    background: #1E3A5F;
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(30, 58, 95, 0.2);
+}
+
+.footer-info p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+}
+
+.footer-info strong {
+    font-weight: 700;
+}
+
+/* Footer */
+.footer {
+    background: #1E3A5F;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 4px solid #8B3A3A;
+    font-size: 0.95rem;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-text p {
+        font-size: 1rem;
+    }
+
+    .logo {
+        height: 80px;
+    }
+
+    .intro-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .intro-section p {
+        font-size: 1rem;
+    }
+
+    .form-card {
+        padding: 1.5rem;
+    }
+
+    .submit-btn {
+        min-width: 100%;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .footer-info p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .header-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-text p {
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        height: 70px;
+    }
+
+    .main-content {
+        padding: 0 0.75rem;
+    }
+
+    .intro-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .intro-section p {
+        font-size: 0.95rem;
+    }
+
+    .form-card {
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 1rem;
+        padding: 0.7rem 0.75rem;
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+    }
+
+    .submit-btn {
+        min-width: 100%;
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .message {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .footer-info {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-info p {
+        font-size: 0.95rem;
+    }
+
+    .footer {
+        font-size: 0.85rem;
+        padding: 1rem;
+    }
+}

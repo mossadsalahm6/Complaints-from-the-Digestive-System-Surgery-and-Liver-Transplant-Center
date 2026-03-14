@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج الشكاوى - مركز جراحة الجهاز الهضمي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logos-section">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663084897512/S5FB8UkLzrBrDE6vX6ZNrr/gsict-logo_4e450e9f.png" alt="شعار مركز جراحة الجهاز الهضمي" class="logo">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663084897512/S5FB8UkLzrBrDE6vX6ZNrr/liver-transplant-logo_a07b431a.jpg" alt="شعار مركز زراعة الكبد" class="logo">
+            </div>
+            <div class="header-text">
+                <h1>مركز جراحة الجهاز الهضمي وزراعة الكبد</h1>
+                <p>جامعة المنصورة</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Introduction Section -->
+        <section class="intro-section">
+            <h2>نموذج الشكاوى والاقتراحات</h2>
+            <p>نرحب بآرائكم واقتراحاتكم. يرجى ملء النموذج بسهولة وسنتولى الرد عليكم قريباً.</p>
+        </section>
+
+        <!-- Form Card -->
+        <div class="form-card">
+            <form id="complaintForm" class="complaint-form">
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label for="name">الاسم <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="اسمك" required>
+                </div>
+
+                <!-- Phone Field -->
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="رقم هاتفك" required>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="بريدك الإلكتروني" required>
+                </div>
+
+                <!-- Complaint Field -->
+                <div class="form-group">
+                    <label for="complaint">الشكوى أو الاقتراح <span class="required">*</span></label>
+                    <textarea id="complaint" name="complaint" placeholder="اكتب شكواك أو اقتراحك هنا" rows="6" required></textarea>
+                </div>
+
+                <!-- Status Messages -->
+                <div id="successMessage" class="message success-message" style="display: none;">
+                    <span class="message-icon">✓</span>
+                    <p>شكراً! تم استقبال شكواك بنجاح</p>
+                </div>
+
+                <div id="errorMessage" class="message error-message" style="display: none;">
+                    <span class="message-icon">⚠</span>
+                    <p id="errorText"></p>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" id="submitBtn" class="submit-btn">إرسال</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer Info -->
+        <div class="footer-info">
+            <p><strong>البريد الإلكتروني:</strong> giscmansedu.eg@gmail.com</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 مركز جراحة الجهاز الهضمي وزراعة الكبد - جامعة المنصورة</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
